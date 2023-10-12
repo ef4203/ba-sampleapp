@@ -1,10 +1,17 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Api", "src\EFK.SampleApp.Api\EFK.SampleApp.Api.csproj", "{DD38466D-58E5-4EF2-BBAC-DB11276A5FF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Ui", "src\EFK.SampleApp.Ui\EFK.SampleApp.Ui.csproj", "{BF64244E-569F-4471-A623-CC3B053D678B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.TelemetryService", "src\EFK.SampleApp.TelemetryService\EFK.SampleApp.TelemetryService.csproj", "{4DC911AA-322C-44D5-8C65-16800E01CAAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{73286F6D-DBC8-4546-9A59-D03DB40B9EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Api.UnitTests", "test\EFK.SampleApp.Api.UnitTests\EFK.SampleApp.Api.UnitTests.csproj", "{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.TelemetryService.UnitTests", "test\EFK.SampleApp.TelemetryService.UnitTests\EFK.SampleApp.TelemetryService.UnitTests.csproj", "{434D0E5D-161C-4392-BE00-C4E5BAC773E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Ui.UnitTests", "test\EFK.SampleApp.Ui.UnitTests\EFK.SampleApp.Ui.UnitTests.csproj", "{FD27F84C-A716-41C0-A1AA-6ADC30D75934}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,22 @@ Global
 		{4DC911AA-322C-44D5-8C65-16800E01CAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC911AA-322C-44D5-8C65-16800E01CAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC911AA-322C-44D5-8C65-16800E01CAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434D0E5D-161C-4392-BE00-C4E5BAC773E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434D0E5D-161C-4392-BE00-C4E5BAC773E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434D0E5D-161C-4392-BE00-C4E5BAC773E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434D0E5D-161C-4392-BE00-C4E5BAC773E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD27F84C-A716-41C0-A1AA-6ADC30D75934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD27F84C-A716-41C0-A1AA-6ADC30D75934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD27F84C-A716-41C0-A1AA-6ADC30D75934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD27F84C-A716-41C0-A1AA-6ADC30D75934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12726F22-C7FF-4C4D-B87A-3B7FDF437DCA} = {73286F6D-DBC8-4546-9A59-D03DB40B9EA1}
+		{434D0E5D-161C-4392-BE00-C4E5BAC773E9} = {73286F6D-DBC8-4546-9A59-D03DB40B9EA1}
+		{FD27F84C-A716-41C0-A1AA-6ADC30D75934} = {73286F6D-DBC8-4546-9A59-D03DB40B9EA1}
 	EndGlobalSection
 EndGlobal

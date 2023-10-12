@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/EFK.SampleApp.Api/Dockerfile
+    ports:
+      - 8000:8080
+  ui:
+    build:
+      context: .
+      dockerfile: src/EFK.SampleApp.Ui/Dockerfile
+    ports:
+      - 8001:80
+  telemetry-service:
+    build:
+      context: .
+      dockerfile: src/EFK.SampleApp.TelemetryService/Dockerfile
+    ports:
+      - 8002:8080
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-CU8-ubuntu-20.04
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=yourStrong(!)Password
+    ports:
+      - 1433:1433
