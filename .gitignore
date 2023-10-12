@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # Rider
 .idea
+
+# SBOM
+docs/bom.json
