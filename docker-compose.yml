@@ -5,6 +5,8 @@ services:
       dockerfile: src/EFK.SampleApp.Api/Dockerfile
     ports:
       - 8000:8080
+    environment:
+      - ConnectionStrings__Db=Server=db;Database=sampleapp;User Id=SA;Password=yourStrong(!)Password;TrustServerCertificate=true;
   ui:
     build:
       context: .
@@ -17,6 +19,8 @@ services:
       dockerfile: src/EFK.SampleApp.TelemetryService/Dockerfile
     ports:
       - 8002:8080
+    environment:
+      - ConnectionStrings__Db=Server=db;Database=sampleapp;User Id=SA;Password=yourStrong(!)Password;TrustServerCertificate=true;
   db:
     image: mcr.microsoft.com/mssql/server:2022-CU8-ubuntu-20.04
     environment:

@@ -14,7 +14,7 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <AnalysisMode>AllEnabledByDefault</AnalysisMode>
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-        <InvariantGlobalization>true</InvariantGlobalization>
+        <InvariantGlobalization>false</InvariantGlobalization>
         <Features>strict</Features>
     </PropertyGroup>
 
@@ -22,7 +22,12 @@
         <Optimize>true</Optimize>
         <Deterministic>true</Deterministic>
     </PropertyGroup>
+
     <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="SonarAnalyzer.CSharp" Version="9.12.0.78982">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -31,5 +36,9 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\EFK.SampleApp.Common.Persistance\EFK.SampleApp.Common.Persistance.csproj"/>
     </ItemGroup>
 </Project>

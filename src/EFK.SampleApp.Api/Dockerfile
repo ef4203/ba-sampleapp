@@ -11,6 +11,7 @@ RUN dotnet publish $PATH_TO_PROJECT --no-build -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine
 
+RUN apk add icu-libs
 WORKDIR /app
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "EFK.SampleApp.Api.dll"]
