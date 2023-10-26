@@ -1,6 +1,7 @@
 namespace EFK.SampleApp.TelemetryService;
 
 using EFK.SampleApp.Common.Persistance;
+using EFK.SampleApp.TelemetryService.Filter;
 using EFK.SampleApp.TelemetryService.Jobs;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;
@@ -27,12 +28,19 @@ public static class Program
 
         var app = builder.Build();
 
-        AutoMigrate(app);
-        StartJobs(app);
+        app.MigrateDatabase();
+        app.StartJobs();
+        app.UseHangfireDashboard(
+            "/hangfire",
+            new DashboardOptions
+            {
+                Authorization = new[] { new HangfireDashboardAuthorizationFilter() },
+            });
+        app.MapHangfireDashboard();
         app.Run();
     }
 
-    private static void AutoMigrate(IHost app)
+    private static void MigrateDatabase(this IHost app)
     {
         using var scope = app.Services.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -43,17 +51,11 @@ public static class Program
         }
     }
 
-    private static void StartJobs(IHost app)
+    private static void StartJobs(this IHost app)
     {
-        var job = app.Services.GetRequiredService<MeasurementJob>();
-        Task.Run(
-            async () =>
-            {
-                while (true)
-                {
-                    await job.Handle();
-                    await Task.Delay(TimeSpan.FromSeconds(60));
-                }
-            });
+        using var scope = app.Services.CreateScope();
+        var jobClient = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
+        var job = scope.ServiceProvider.GetRequiredService<MeasurementJob>();
+        jobClient.AddOrUpdate(nameof(MeasurementJob), () => job.Handle(), Cron.Minutely);
     }
 }
