@@ -5,10 +5,10 @@ Name | Author | Version | License
 Azure.Core | Microsoft | 1.25.0 | MIT
 Azure.Identity | Microsoft | 1.7.0 | MIT
 coverlet.collector | tonerdo | 6.0.0 | MIT
-Hangfire.AspNetCore | Sergey Odinokov | 1.8.5 | NOASSERTION
-Hangfire.Core | Sergey Odinokov | 1.8.5 | NOASSERTION
-Hangfire.NetCore | Sergey Odinokov | 1.8.5 | NOASSERTION
-Hangfire.SqlServer | Sergey Odinokov | 1.8.5 | NOASSERTION
+Hangfire.AspNetCore | Sergey Odinokov | 1.8.6 | NOASSERTION
+Hangfire.Core | Sergey Odinokov | 1.8.6 | NOASSERTION
+Hangfire.NetCore | Sergey Odinokov | 1.8.6 | NOASSERTION
+Hangfire.SqlServer | Sergey Odinokov | 1.8.6 | NOASSERTION
 Humanizer.Core | Mehdi Khalili, Claire Novotny | 2.14.1 | MIT
 Microsoft.AspNetCore.Authorization | Microsoft | 8.0.0-rc.2.23480.2 | MIT
 Microsoft.AspNetCore.Components | Microsoft | 8.0.0-rc.2.23480.2 | MIT
@@ -23,12 +23,12 @@ Microsoft.CodeCoverage | Microsoft | 17.7.2 | MIT
 Microsoft.CSharp | Microsoft | 4.5.0 | 
 Microsoft.Data.SqlClient | Microsoft | 5.1.1 | MIT
 Microsoft.Data.SqlClient.SNI.runtime | Microsoft | 5.1.0 | 
-Microsoft.EntityFrameworkCore | Microsoft | 7.0.12 | MIT
-Microsoft.EntityFrameworkCore.Abstractions | Microsoft | 7.0.12 | MIT
-Microsoft.EntityFrameworkCore.Analyzers | Microsoft | 7.0.12 | MIT
-Microsoft.EntityFrameworkCore.Design | Microsoft | 7.0.12 | MIT
-Microsoft.EntityFrameworkCore.Relational | Microsoft | 7.0.12 | MIT
-Microsoft.EntityFrameworkCore.SqlServer | Microsoft | 7.0.12 | MIT
+Microsoft.EntityFrameworkCore | Microsoft | 7.0.13 | MIT
+Microsoft.EntityFrameworkCore.Abstractions | Microsoft | 7.0.13 | MIT
+Microsoft.EntityFrameworkCore.Analyzers | Microsoft | 7.0.13 | MIT
+Microsoft.EntityFrameworkCore.Design | Microsoft | 7.0.13 | MIT
+Microsoft.EntityFrameworkCore.Relational | Microsoft | 7.0.13 | MIT
+Microsoft.EntityFrameworkCore.SqlServer | Microsoft | 7.0.13 | MIT
 Microsoft.Extensions.Caching.Abstractions | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Caching.Memory | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Configuration | Microsoft | 8.0.0-rc.2.23479.6 | MIT
@@ -42,26 +42,26 @@ Microsoft.Extensions.DependencyInjection | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.DependencyInjection.Abstractions | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.DependencyInjection.Abstractions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.DependencyModel | Microsoft | 7.0.0 | MIT
-Microsoft.Extensions.Diagnostics | Microsoft | 8.0.0-rc.1.23419.4 | MIT
-Microsoft.Extensions.Diagnostics.Abstractions | Microsoft | 8.0.0-rc.1.23419.4 | MIT
+Microsoft.Extensions.Diagnostics | Microsoft | 8.0.0-rc.2.23479.6 | MIT
+Microsoft.Extensions.Diagnostics.Abstractions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.FileProviders.Abstractions | Microsoft | 3.0.0 | Apache-2.0
 Microsoft.Extensions.FileProviders.Abstractions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.FileProviders.Physical | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.FileSystemGlobbing | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.Hosting.Abstractions | Microsoft | 3.0.0 | Apache-2.0
-Microsoft.Extensions.Hosting.Abstractions | Microsoft | 8.0.0-rc.1.23419.4 | MIT
-Microsoft.Extensions.Http | Microsoft | 8.0.0-rc.1.23419.4 | MIT
+Microsoft.Extensions.Hosting.Abstractions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
+Microsoft.Extensions.Http | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.Logging | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Logging | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.Logging.Abstractions | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Logging.Abstractions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.Options | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Options | Microsoft | 8.0.0-rc.2.23479.6 | MIT
-Microsoft.Extensions.Options.ConfigurationExtensions | Microsoft | 8.0.0-rc.1.23419.4 | MIT
+Microsoft.Extensions.Options.ConfigurationExtensions | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 Microsoft.Extensions.Primitives | Microsoft | 7.0.0 | MIT
 Microsoft.Extensions.Primitives | Microsoft | 8.0.0-rc.2.23479.6 | MIT
-Microsoft.Fast.Components.FluentUI | Microsoft | 3.2.0 | MIT
-Microsoft.Fast.Components.FluentUI.Icons | Microsoft | 3.1.1 | MIT
+Microsoft.Fast.Components.FluentUI | Microsoft | 3.2.2 | MIT
+Microsoft.Fast.Components.FluentUI.Icons | Microsoft | 3.2.2 | MIT
 Microsoft.Identity.Client | Microsoft | 4.47.2 | MIT
 Microsoft.Identity.Client.Extensions.Msal | Microsoft | 2.19.3 | MIT
 Microsoft.IdentityModel.Abstractions | Microsoft | 6.24.0 | MIT
@@ -94,7 +94,7 @@ StyleCop.Analyzers | Sam Harwell et. al. | 1.1.118 | Apache-2.0
 System.CodeDom | Microsoft | 4.4.0 | 
 System.Configuration.ConfigurationManager | Microsoft | 6.0.1 | MIT
 System.Diagnostics.DiagnosticSource | Microsoft | 6.0.0 | MIT
-System.Diagnostics.DiagnosticSource | Microsoft | 8.0.0-rc.1.23419.4 | MIT
+System.Diagnostics.DiagnosticSource | Microsoft | 8.0.0-rc.2.23479.6 | MIT
 System.Drawing.Common | Microsoft | 6.0.0 | MIT
 System.Formats.Asn1 | Microsoft | 5.0.0 | MIT
 System.IdentityModel.Tokens.Jwt | Microsoft | 6.24.0 | MIT
