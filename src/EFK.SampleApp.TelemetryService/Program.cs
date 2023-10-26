@@ -36,6 +36,7 @@ public static class Program
             {
                 Authorization = new[] { new HangfireDashboardAuthorizationFilter() },
             });
+
         app.MapHangfireDashboard();
         app.Run();
     }
