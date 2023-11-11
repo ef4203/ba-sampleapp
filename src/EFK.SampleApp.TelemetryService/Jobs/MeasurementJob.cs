@@ -1,9 +1,12 @@
+﻿// Copyright (c) Elias Frank. All rights reserved.
+
 namespace EFK.SampleApp.TelemetryService.Jobs;
 
+using System.Security.Cryptography;
 using EFK.SampleApp.Common;
 using EFK.SampleApp.Common.Persistance;
 
-public class MeasurementJob
+public partial class MeasurementJob
 {
     private readonly AppDbContext dbContext;
 
@@ -15,16 +18,20 @@ public class MeasurementJob
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task Handle()
+    public async Task HandleAsync()
     {
-        this.logger.LogInformation("Adding new measurement...");
+        this.LogAddingMeasurement();
         var measurement = new Measurement
         {
             Timestamp = DateTime.UtcNow,
-            Value = new Random().NextDouble(),
+            Value = RandomNumberGenerator.GetInt32(1, 100) + (1f / RandomNumberGenerator.GetInt32(1, 10)),
         };
 
         this.dbContext.Measurements.Add(measurement);
-        await this.dbContext.SaveChangesAsync();
+        await this.dbContext.SaveChangesAsync()
+            .ConfigureAwait(false);
     }
+
+    [LoggerMessage(LogLevel.Information, "Adding new measurement...")]
+    private partial void LogAddingMeasurement();
 }

@@ -1,3 +1,5 @@
+﻿// Copyright (c) Elias Frank. All rights reserved.
+
 namespace EFK.SampleApp.TelemetryService;
 
 using EFK.SampleApp.Common.Persistance;
@@ -57,6 +59,6 @@ public static class Program
         using var scope = app.Services.CreateScope();
         var jobClient = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
         var job = scope.ServiceProvider.GetRequiredService<MeasurementJob>();
-        jobClient.AddOrUpdate(nameof(MeasurementJob), () => job.Handle(), Cron.Minutely);
+        jobClient.AddOrUpdate(nameof(MeasurementJob), () => job.HandleAsync(), Cron.Minutely);
     }
 }

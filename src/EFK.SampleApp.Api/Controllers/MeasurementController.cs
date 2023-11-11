@@ -1,3 +1,5 @@
+﻿// Copyright (c) Elias Frank. All rights reserved.
+
 namespace EFK.SampleApp.Api.Controllers;
 
 using EFK.SampleApp.Common;
@@ -17,10 +19,11 @@ public class MeasurementController : Controller
     }
 
     [HttpGet]
-    public async Task<Measurement[]> GetAll()
+    public async Task<Measurement[]> GetAllAsync()
     {
         return await this.dbContext.Measurements
             .OrderByDescending(x => x.Timestamp)
-            .ToArrayAsync();
+            .ToArrayAsync()
+            .ConfigureAwait(false);
     }
 }

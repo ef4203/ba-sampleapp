@@ -1,3 +1,5 @@
+﻿// Copyright (c) Elias Frank. All rights reserved.
+
 namespace EFK.SampleApp.Common;
 
 using System.ComponentModel.DataAnnotations;
