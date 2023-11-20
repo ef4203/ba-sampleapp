@@ -5,7 +5,7 @@
 
 This repository contains a sample container application for my bachelor's thesis, that will be deployed on an industrial Internet of Things (IoT) device.
 
-## Run and build with docker-compose
+## Getting started
 ```
 docker-compose up --build -d
 ```
@@ -22,8 +22,7 @@ dotnet out/EFK.SampleApp.Api.dll
 ```
 
 ## Contributing
-- Since this application serves no functional purpose other than demonstrating IoT deployments, there aren't any milestones or features.
-- Regardless, if you have improvements, feel free to contribute with a pull request.
+All contributions are welcome, if you have ideas, improvements or suggestions feel free to open an issue or a pull request on GitHub.
 
 ## License
 This project is licensed under the MIT license, see: [LICENSE](LICENSE). External dependencies may be subject to different licenses, see [Software Bill of Material](docs/SBOM.md).
