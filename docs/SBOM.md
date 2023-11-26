@@ -8,8 +8,8 @@ Aspire.Microsoft.EntityFrameworkCore.SqlServer | Microsoft | 8.0.0-preview.1.235
 Aspire.StackExchange.Redis | Microsoft | 8.0.0-preview.1.23557.2 | MIT
 Aspire.StackExchange.Redis.OutputCaching | Microsoft | 8.0.0-preview.1.23557.2 | MIT
 AspNetCore.HealthChecks.Redis | Xabaril Contributors | 7.0.1 | Apache-2.0
-Azure.Core | Microsoft | 1.25.0 | MIT
-Azure.Identity | Microsoft | 1.7.0 | MIT
+Azure.Core | Microsoft | 1.36.0 | MIT
+Azure.Identity | Microsoft | 1.10.4 | MIT
 coverlet.collector | tonerdo | 6.0.0 | MIT
 Fractions | Daniel Mueller | 7.2.1 | BSD-2-Clause
 Google.Protobuf | Google Inc. | 3.22.5 | BSD-3-Clause
@@ -108,8 +108,8 @@ Microsoft.Extensions.Telemetry | Microsoft | 8.0.0 | MIT
 Microsoft.Extensions.Telemetry.Abstractions | Microsoft | 8.0.0 | MIT
 Microsoft.FluentUI.AspNetCore.Components | Microsoft | 4.0.0-preview.2 | MIT
 Microsoft.FluentUI.AspNetCore.Components.Icons | Microsoft | 4.0.0-preview.2 | MIT
-Microsoft.Identity.Client | Microsoft | 4.47.2 | MIT
-Microsoft.Identity.Client.Extensions.Msal | Microsoft | 2.19.3 | MIT
+Microsoft.Identity.Client | Microsoft | 4.56.0 | MIT
+Microsoft.Identity.Client.Extensions.Msal | Microsoft | 4.56.0 | MIT
 Microsoft.IdentityModel.Abstractions | Microsoft | 6.24.0 | MIT
 Microsoft.IdentityModel.Abstractions | Microsoft | 6.31.0 | MIT
 Microsoft.IdentityModel.JsonWebTokens | Microsoft | 6.24.0 | MIT
@@ -133,10 +133,9 @@ Microsoft.TestPlatform.TestHost | Microsoft | 17.8.0 | MIT
 Microsoft.VisualStudio.Threading.Analyzers | Microsoft | 17.8.14 | MIT
 Microsoft.Win32.SystemEvents | Microsoft | 6.0.0 | MIT
 Mono.TextTemplating | mhutch | 2.2.1 | MIT
-NETStandard.Library | Microsoft | 2.0.0 | 
 Newtonsoft.Json | James Newton-King | 13.0.1 | MIT
 NuGet.Frameworks | Microsoft | 6.5.0 | Apache-2.0
-NUnit | Charlie Poole, Rob Prouse | 3.14.0 | MIT
+NUnit | Charlie Poole, Rob Prouse | 4.0.0 | MIT
 NUnit.Analyzers | NUnit | 3.9.0 | MIT
 NUnit3TestAdapter | Charlie Poole, Terje Sandstrom | 4.5.0 | MIT
 OpenTelemetry | OpenTelemetry Authors | 1.7.0-alpha.1 | Apache-2.0
@@ -179,6 +178,7 @@ System.Drawing.Common | Microsoft | 6.0.0 | MIT
 System.Formats.Asn1 | Microsoft | 5.0.0 | MIT
 System.IdentityModel.Tokens.Jwt | Microsoft | 6.24.0 | MIT
 System.IdentityModel.Tokens.Jwt | Microsoft | 6.31.0 | MIT
+System.IO.FileSystem.AccessControl | Microsoft | 5.0.0 | MIT
 System.IO.Pipelines | Microsoft | 5.0.1 | MIT
 System.IO.Pipelines | Microsoft | 6.0.3 | MIT
 System.IO.Pipelines | Microsoft | 8.0.0-rc.2.23479.6 | MIT
