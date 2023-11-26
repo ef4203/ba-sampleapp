@@ -1,10 +1,9 @@
-name: .NET Build Validation
+﻿name: .NET Security Scan
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+  schedule:
+  - cron: "1 0 * * 1"
 
 jobs:
   build:
@@ -20,7 +19,7 @@ jobs:
       run: dotnet workload install aspire
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Scan for security vulnerabilities
+      run: |
+        dotnet list package --vulnerable --include-transitive | tee vulnerable.txt
+        sh -c "! grep 'has the following vulnerable packages' vulnerable.txt"
