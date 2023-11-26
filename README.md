@@ -11,14 +11,10 @@ docker-compose up --build -d
 ```
 
 ## Building from source
-Download and install the [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). You can build the applications with:
+Download and install the [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). You can build and run the applications with:
 
 ```
-dotnet publish src/EFK.SampleApp.Api/EFK.SampleApp.Api.csproj -c Release -o out/
-```
-Which then can be run with:
-```
-dotnet out/EFK.SampleApp.Api.dll
+dotnet run --project src/EFK.SampleApp.AppHost/EFK.SampleApp.AppHost.csproj
 ```
 
 ## Contributing
