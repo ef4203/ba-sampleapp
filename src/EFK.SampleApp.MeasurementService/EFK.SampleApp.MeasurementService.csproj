@@ -20,7 +20,7 @@
         <Deterministic>true</Deterministic>
         <PublishSingleFile>true</PublishSingleFile>
     </PropertyGroup>
-   
+
     <ItemGroup>
         <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json"/>
     </ItemGroup>

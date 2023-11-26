@@ -1,4 +1,6 @@
 ﻿// Copyright (c) Elias Frank. All rights reserved.
 
-[assembly:System.CLSCompliant(true)]
-[assembly:System.Runtime.InteropServices.ComVisible(false)]
+using System.Runtime.InteropServices;
+
+[assembly: CLSCompliant(true)]
+[assembly: ComVisible(false)]

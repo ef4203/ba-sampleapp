@@ -9,6 +9,7 @@ public class MeasurementApiClient(HttpClient httpClient)
     public async Task<Measurement[]> GetWeatherAsync()
     {
         return await httpClient.GetFromJsonAsync<Measurement[]>("/api/measurements")
-                .ConfigureAwait(false) ?? [];
+                .ConfigureAwait(false)
+            ?? [];
     }
 }

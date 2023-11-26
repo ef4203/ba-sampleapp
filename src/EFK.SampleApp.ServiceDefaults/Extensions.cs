@@ -20,41 +20,45 @@ public static class Extensions
         builder.AddDefaultHealthChecks();
         builder.Services.AddServiceDiscovery();
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.ConfigureHttpClientDefaults(http =>
-        {
-            http.AddStandardResilienceHandler();
-            http.UseServiceDiscovery();
-        });
+        builder.Services.ConfigureHttpClientDefaults(
+            http =>
+            {
+                http.AddStandardResilienceHandler();
+                http.UseServiceDiscovery();
+            });
 
         return builder;
     }
 
     public static IHostApplicationBuilder ConfigureOpenTelemetry(this IHostApplicationBuilder builder)
     {
-        builder.Logging.AddOpenTelemetry(logging =>
-        {
-            logging.IncludeFormattedMessage = true;
-            logging.IncludeScopes = true;
-        });
+        builder.Logging.AddOpenTelemetry(
+            logging =>
+            {
+                logging.IncludeFormattedMessage = true;
+                logging.IncludeScopes = true;
+            });
 
         builder.Services.AddOpenTelemetry()
-            .WithMetrics(metrics =>
-            {
-                metrics.AddRuntimeInstrumentation()
-                       .AddBuiltInMeters();
-            })
-            .WithTracing(tracing =>
-            {
-                if (builder.Environment.IsDevelopment())
+            .WithMetrics(
+                metrics =>
                 {
-                    // We want to view all traces in development
-                    tracing.SetSampler(new AlwaysOnSampler());
-                }
+                    metrics.AddRuntimeInstrumentation()
+                        .AddBuiltInMeters();
+                })
+            .WithTracing(
+                tracing =>
+                {
+                    if (builder.Environment.IsDevelopment())
+                    {
+                        // We want to view all traces in development
+                        tracing.SetSampler(new AlwaysOnSampler());
+                    }
 
-                tracing.AddAspNetCoreInstrumentation()
-                       .AddGrpcClientInstrumentation()
-                       .AddHttpClientInstrumentation();
-            });
+                    tracing.AddAspNetCoreInstrumentation()
+                        .AddGrpcClientInstrumentation()
+                        .AddHttpClientInstrumentation();
+                });
 
         builder.AddOpenTelemetryExporters();
 
@@ -101,17 +105,21 @@ public static class Extensions
         app.MapHealthChecks("/health");
 
         // Only health checks tagged with the "live" tag must pass for app to be considered alive
-        app.MapHealthChecks("/alive", new HealthCheckOptions
-        {
-            Predicate = r => r.Tags.Contains("live"),
-        });
+        app.MapHealthChecks(
+            "/alive",
+            new HealthCheckOptions
+            {
+                Predicate = r => r.Tags.Contains("live"),
+            });
 
         return app;
     }
 
-    private static MeterProviderBuilder AddBuiltInMeters(this MeterProviderBuilder meterProviderBuilder) =>
-        meterProviderBuilder.AddMeter(
+    private static MeterProviderBuilder AddBuiltInMeters(this MeterProviderBuilder meterProviderBuilder)
+    {
+        return meterProviderBuilder.AddMeter(
             "Microsoft.AspNetCore.Hosting",
             "Microsoft.AspNetCore.Server.Kestrel",
             "System.Net.Http");
+    }
 }

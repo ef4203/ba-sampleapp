@@ -13,6 +13,17 @@ public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger
 
     private Timer? timer;
 
+    public async ValueTask DisposeAsync()
+    {
+        if (this.timer is IAsyncDisposable timerInstance)
+        {
+            await timerInstance.DisposeAsync()
+                .ConfigureAwait(false);
+        }
+
+        this.timer = null;
+    }
+
     public Task StartAsync(CancellationToken cancellationToken)
     {
         this.LogTimerStart();
@@ -27,17 +38,6 @@ public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger
         this.timer?.Change(Timeout.Infinite, 0);
 
         return Task.CompletedTask;
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        if (this.timer is IAsyncDisposable timerInstance)
-        {
-            await timerInstance.DisposeAsync()
-                .ConfigureAwait(false);
-        }
-
-        this.timer = null;
     }
 
     private void DoWork(object? state)
@@ -56,7 +56,7 @@ public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger
         var measurement = new Measurement
         {
             Timestamp = DateTime.UtcNow,
-            Value = RandomNumberGenerator.GetInt32(1, 100) + (1f / RandomNumberGenerator.GetInt32(1, 10)),
+            Value = RandomNumberGenerator.GetInt32(1, 100) + 1f / RandomNumberGenerator.GetInt32(1, 10),
         };
 
         this.LogAddingMeasurement(measurement.Value);

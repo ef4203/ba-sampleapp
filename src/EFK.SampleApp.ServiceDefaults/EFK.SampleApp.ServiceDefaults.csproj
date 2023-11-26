@@ -21,7 +21,7 @@
         <Optimize>true</Optimize>
         <Deterministic>true</Deterministic>
     </PropertyGroup>
-   
+
     <ItemGroup>
         <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json"/>
     </ItemGroup>

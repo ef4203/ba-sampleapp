@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <IsAspireHost>true</IsAspireHost>
     </PropertyGroup>
-   
+
     <PropertyGroup>
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
         <CodeAnalysisRuleSet>..\..\ba-sampleapp.ruleset</CodeAnalysisRuleSet>

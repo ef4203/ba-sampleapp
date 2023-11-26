@@ -1,6 +1,6 @@
 ﻿@page "/measurements"
 @using EFK.SampleApp.Common
-@attribute [StreamRendering(true)]
+@attribute [StreamRendering()]
 @attribute [OutputCache(Duration = 5)]
 
 @inject MeasurementApiClient MeasurementApi
@@ -13,36 +13,40 @@
 
 @if (measurements == null)
 {
-    <p><em>Loading...</em></p>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 else
 {
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Timestamp</th>
-                <th>Value</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Timestamp</th>
+            <th>Value</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var measurement in measurements)
-            {
-                <tr>
-                    <td>@measurement.Id</td>
-                    <td>@measurement.Timestamp</td>
-                    <td>@measurement.Value</td>
-                </tr>
-            }
+        @foreach (var measurement in measurements)
+        {
+            <tr>
+                <td>@measurement.Id</td>
+                <td>@measurement.Timestamp</td>
+                <td>@measurement.Value</td>
+            </tr>
+        }
         </tbody>
     </table>
 }
 
 @code {
+
     private Measurement[]? measurements;
 
     protected override async Task OnInitializedAsync()
     {
         measurements = await MeasurementApi.GetWeatherAsync();
     }
+
 }
