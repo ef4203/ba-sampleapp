@@ -1,7 +1,9 @@
 # Bachelor's Thesis Sample App
-[![Build Validation](https://github.com/ef4203/ba-sampleapp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ef4203/ba-sampleapp/actions/workflows/dotnet.yml)
-![GitHub](https://img.shields.io/github/license/ef4203/ba-sampleapp)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/ef4203/ba-sampleapp)
+[![Build](https://img.shields.io/github/actions/workflow/status/ef4203/ba-sampleapp/dotnet.yml)](https://github.com/ef4203/ba-sampleapp/actions/workflows/dotnet.yml)
+[![License](https://img.shields.io/github/license/ef4203/ba-sampleapp)](https://github.com/ef4203/ba-sampleapp/blob/master/LICENSE)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ef4203/ba-sampleapp)](https://github.com/ef4203/ba-sampleapp/pulls)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/ef4203/ba-sampleapp)](https://github.com/ef4203/ba-sampleapp/pulls?q=is%3Apr+is%3Aclosed)
+
 
 This repository contains a sample container application for my bachelor's thesis, that will be deployed on an industrial Internet of Things (IoT) device.
 
