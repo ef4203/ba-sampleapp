@@ -402,3 +402,6 @@ FodyWeavers.xsd
 
 # SBOM
 docs/bom.json
+
+# MacOS
+.DS_Store
