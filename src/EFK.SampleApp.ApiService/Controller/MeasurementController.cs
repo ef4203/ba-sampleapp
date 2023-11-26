@@ -9,13 +9,22 @@ using Microsoft.EntityFrameworkCore;
 
 [ApiController]
 [Route("api/measurements")]
-public class MeasurementController(AppDbContext dbContext) : ControllerBase
+public partial class MeasurementController(
+    AppDbContext dbContext,
+    ILogger<MeasurementController> logger) : ControllerBase
 {
+    private readonly ILogger logger = logger;
+
     [HttpGet]
     public Task<Measurement[]> GetAllAsync()
     {
+        this.LogGetAll();
+
         return dbContext.Measurements
             .OrderByDescending(x => x.Timestamp)
             .ToArrayAsync();
     }
+
+    [LoggerMessage(LogLevel.Information, $"{nameof(MeasurementController)} - {nameof(GetAllAsync)}")]
+    private partial void LogGetAll();
 }

@@ -42,13 +42,9 @@ public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger
 
     private void DoWork(object? state)
     {
-        if (Activity.Current is null)
-        {
-            var activity = new Activity(nameof(CreateMeasurement))
-                .Start();
-
-            Activity.Current = activity;
-        }
+        using var activity = new Activity(nameof(CreateMeasurement));
+        Activity.Current ??= activity;
+        activity.Start();
 
         using var scope = serviceProvider.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -63,7 +59,7 @@ public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger
         dbContext.Measurements.Add(measurement);
         dbContext.SaveChanges();
 
-        Activity.Current.Stop();
+        activity.Stop();
     }
 
     [LoggerMessage(LogLevel.Information, $"Registering timer {nameof(CreateMeasurement)}")]
