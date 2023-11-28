@@ -4,12 +4,7 @@ namespace EFK.SampleApp.Common.Persistance;
 
 using Microsoft.EntityFrameworkCore;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
-    public AppDbContext(DbContextOptions options)
-        : base(options)
-    {
-    }
-
     public DbSet<Measurement> Measurements { get; set; }
 }

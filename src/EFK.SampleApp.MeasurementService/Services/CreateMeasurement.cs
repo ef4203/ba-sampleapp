@@ -7,7 +7,10 @@ using System.Security.Cryptography;
 using EFK.SampleApp.Common;
 using EFK.SampleApp.Common.Persistance;
 
-public partial class CreateMeasurement(IServiceProvider serviceProvider, ILogger<CreateMeasurement> logger) : IHostedService, IAsyncDisposable
+public partial class CreateMeasurement(
+    IServiceProvider serviceProvider,
+    ILogger<CreateMeasurement> logger)
+    : IHostedService, IAsyncDisposable
 {
     private readonly ILogger logger = logger;
 
