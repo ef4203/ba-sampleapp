@@ -1,19 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <IsAspireHost>true</IsAspireHost>
-        <CodeAnalysisRuleSet>..\..\ba-sampleapp.ruleset</CodeAnalysisRuleSet>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
-        <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json"/>
+        <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.1.23557.2"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\EFK.SampleApp.ApiService\EFK.SampleApp.ApiService.csproj"/>
         <ProjectReference Include="..\EFK.SampleApp.MeasurementService\EFK.SampleApp.MeasurementService.csproj"/>
         <ProjectReference Include="..\EFK.SampleApp.Web\EFK.SampleApp.Web.csproj"/>
-        <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.1.23557.2"/>
     </ItemGroup>
 </Project>

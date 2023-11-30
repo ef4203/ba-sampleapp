@@ -13,7 +13,7 @@ public partial class MeasurementController(
     AppDbContext dbContext,
     ILogger<MeasurementController> logger) : ControllerBase
 {
-    private readonly ILogger logger = logger;
+    private readonly ILogger<MeasurementController> logger = logger;
 
     [HttpGet]
     public Task<Measurement[]> GetAllAsync()

@@ -2,12 +2,7 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <IsAspireSharedProject>true</IsAspireSharedProject>
-        <CodeAnalysisRuleSet>..\..\ba-sampleapp.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
-
-    <ItemGroup>
-        <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json"/>
-    </ItemGroup>
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App"/>

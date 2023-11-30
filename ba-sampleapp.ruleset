@@ -192,8 +192,8 @@
         <Rule Id="SA1628" Action="Warning" />          <!-- Documentation text should begin with a capital letter -->
         <Rule Id="SA1629" Action="Warning" />          <!-- Documentation text should end with a period -->
         <Rule Id="SA1630" Action="Warning" />          <!-- Documentation text should contain whitespace -->
-        <Rule Id="SA1631" Action="None" />             <!-- Documentation should meet character percentage -->
-        <Rule Id="SA1632" Action="None" />             <!-- Documentation text should meet minimum character length -->
+        <Rule Id="SA1631" Action="Warning" />          <!-- Documentation should meet character percentage -->
+        <Rule Id="SA1632" Action="Warning" />          <!-- Documentation text should meet minimum character length -->
         <Rule Id="SA1633" Action="Warning" />          <!-- File should have header -->
         <Rule Id="SA1634" Action="Warning" />          <!-- File header should show copyright -->
         <Rule Id="SA1635" Action="Warning" />          <!-- File header should have copyright text -->
@@ -216,11 +216,6 @@
     </Rules>
     <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
         <Rule Id="CS1591" Action="None" />              <!-- Missing XML comment for publicly visible type or member -->
-    </Rules>
-    <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
-        <Rule Id="CA2007" Action="Warning" />              <!-- Do not directly await a Task -->
-        <Rule Id="CA1848" Action="Warning" />              <!-- User LoggerMessage delegates instead of calling LoggerExtensions -->
-        <Rule Id="CA1812" Action="Warning" />              <!-- Internal class is never instantiated -->
     </Rules>
     <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
         <Rule Id="S1" Action="Warning" />

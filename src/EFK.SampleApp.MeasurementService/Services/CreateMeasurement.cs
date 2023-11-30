@@ -18,19 +18,18 @@ public partial class CreateMeasurement(
 
     public async ValueTask DisposeAsync()
     {
-        if (this.timer is IAsyncDisposable timerInstance)
+        if (this.timer != null)
         {
-            await timerInstance.DisposeAsync()
+            await this.timer.DisposeAsync()
                 .ConfigureAwait(false);
+            this.timer = null;
         }
-
-        this.timer = null;
     }
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
         this.LogTimerStart();
-        this.timer = new Timer(this.DoWork, null, TimeSpan.FromSeconds(15), TimeSpan.FromSeconds(60));
+        this.timer ??= new Timer(this.DoWork, null, TimeSpan.FromSeconds(15), TimeSpan.FromSeconds(60));
 
         return Task.CompletedTask;
     }

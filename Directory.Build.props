@@ -1,9 +1,25 @@
 ﻿<Project>
     <PropertyGroup>
+        <!-- Project Config -->
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>12</LangVersion>
         <Nullable>enable</Nullable>
+        <Features>strict</Features>
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
+        <InvariantGlobalization>false</InvariantGlobalization>
+        <NeutralLanguage>en</NeutralLanguage>
+        <!-- Performance Optimizations  -->
+        <Optimize>true</Optimize>
+        <Deterministic>true</Deterministic>
+        <TieredCompilation>true</TieredCompilation>
+        <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
+        <TieredCompilationQuickJitForLoops>false</TieredCompilationQuickJitForLoops>
+        <TieredPGO>true</TieredPGO>
+        <PublishSingleFile>true</PublishSingleFile>
+        <PublishReadyToRun>true</PublishReadyToRun>
+        <ServerGarbageCollection>true</ServerGarbageCollection> 
+        <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+        <!-- Analyzer Settings -->
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <RunCodeAnalysis>true</RunCodeAnalysis>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
@@ -11,13 +27,13 @@
         <AnalysisLevel>preview</AnalysisLevel>
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
         <NoWarn>1591</NoWarn>
-        <InvariantGlobalization>false</InvariantGlobalization>
-        <NeutralLanguage>en</NeutralLanguage>
-        <Features>strict</Features>
-        <Optimize>true</Optimize>
-        <Deterministic>true</Deterministic>
-        <PublishSingleFile>true</PublishSingleFile>
+        <CodeAnalysisRuleSetDirectories>$(CodeAnalysisRuleSetDirectories);$(MSBuildThisFileDirectory)</CodeAnalysisRuleSetDirectories>
+        <CodeAnalysisRuleSet>ba-sampleapp.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" Link="stylecop.json"/>
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.8.14">
@@ -41,6 +57,20 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="ReflectionAnalyzers" Version="0.3.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+    <ItemGroup Condition="$(IsTestProject) == 'true'">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
+        <PackageReference Include="NUnit" Version="4.0.0"/>
+        <PackageReference Include="NUnit3TestAdapter" Version="4.5.0"/>
+        <PackageReference Include="NUnit.Analyzers" Version="3.10.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
