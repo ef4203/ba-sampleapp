@@ -6,7 +6,7 @@
     <ItemGroup>
         <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="8.0.0-preview.1.23557.2"/>
     </ItemGroup>
-    
+
     <ItemGroup>
         <ProjectReference Include="..\EFK.SampleApp.Common\EFK.SampleApp.Common.csproj"/>
         <ProjectReference Include="..\EFK.SampleApp.ServiceDefaults\EFK.SampleApp.ServiceDefaults.csproj"/>

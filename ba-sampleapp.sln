@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFK.SampleApp.Web", "src\EF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{933B2E13-7FB2-4545-AB38-20868FE2E8C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Common.Persistance", "src\EFK.SampleApp.Common.Persistance\EFK.SampleApp.Common.Persistance.csproj", "{1745F801-46AD-4215-938E-F609475A9193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Common.Persistence", "src\EFK.SampleApp.Common.Persistence\EFK.SampleApp.Common.Persistence.csproj", "{1745F801-46AD-4215-938E-F609475A9193}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFK.SampleApp.Common", "src\EFK.SampleApp.Common\EFK.SampleApp.Common.csproj", "{4D075089-29ED-492D-B4C8-ED08323D66CA}"
 EndProject

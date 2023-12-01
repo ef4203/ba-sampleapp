@@ -3,17 +3,17 @@
 namespace EFK.SampleApp.ApiService.Controller;
 
 using EFK.SampleApp.Common;
-using EFK.SampleApp.Common.Persistance;
+using EFK.SampleApp.Common.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [ApiController]
 [Route("api/measurements")]
-public partial class MeasurementController(
+public partial class MeasurementsController(
     AppDbContext dbContext,
-    ILogger<MeasurementController> logger) : ControllerBase
+    ILogger<MeasurementsController> logger) : ControllerBase
 {
-    private readonly ILogger<MeasurementController> logger = logger;
+    private readonly ILogger<MeasurementsController> logger = logger;
 
     [HttpGet]
     public Task<Measurement[]> GetAllAsync()
@@ -25,6 +25,6 @@ public partial class MeasurementController(
             .ToArrayAsync();
     }
 
-    [LoggerMessage(LogLevel.Information, $"{nameof(MeasurementController)} - {nameof(GetAllAsync)}")]
+    [LoggerMessage(LogLevel.Information, $"{nameof(MeasurementsController)} - {nameof(GetAllAsync)}")]
     private partial void LogGetAll();
 }

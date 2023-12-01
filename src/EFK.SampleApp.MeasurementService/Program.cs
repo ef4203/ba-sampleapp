@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Elias Frank. All rights reserved.
 
-using EFK.SampleApp.Common.Persistance;
+using EFK.SampleApp.Common.Persistence;
 using EFK.SampleApp.MeasurementService.Services;
 using EFK.SampleApp.ServiceDefaults;
 

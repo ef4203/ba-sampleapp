@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace EFK.SampleApp.Common.Persistance.Migrations
+namespace EFK.SampleApp.Common.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

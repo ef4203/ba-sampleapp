@@ -8,17 +8,6 @@
         <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
         <InvariantGlobalization>false</InvariantGlobalization>
         <NeutralLanguage>en</NeutralLanguage>
-        <!-- Performance Optimizations  -->
-        <Optimize>true</Optimize>
-        <Deterministic>true</Deterministic>
-        <TieredCompilation>true</TieredCompilation>
-        <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
-        <TieredCompilationQuickJitForLoops>false</TieredCompilationQuickJitForLoops>
-        <TieredPGO>true</TieredPGO>
-        <PublishSingleFile>true</PublishSingleFile>
-        <PublishReadyToRun>true</PublishReadyToRun>
-        <ServerGarbageCollection>true</ServerGarbageCollection> 
-        <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
         <!-- Analyzer Settings -->
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <RunCodeAnalysis>true</RunCodeAnalysis>
@@ -29,6 +18,20 @@
         <NoWarn>1591</NoWarn>
         <CodeAnalysisRuleSetDirectories>$(CodeAnalysisRuleSetDirectories);$(MSBuildThisFileDirectory)</CodeAnalysisRuleSetDirectories>
         <CodeAnalysisRuleSet>ba-sampleapp.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <!-- Performance Optimizations  -->
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <Optimize>true</Optimize>
+        <Deterministic>true</Deterministic>
+        <TieredCompilation>true</TieredCompilation>
+        <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
+        <TieredCompilationQuickJitForLoops>false</TieredCompilationQuickJitForLoops>
+        <TieredPGO>true</TieredPGO>
+        <PublishSingleFile>true</PublishSingleFile>
+        <PublishReadyToRun>true</PublishReadyToRun>
+        <ServerGarbageCollection>true</ServerGarbageCollection>
+        <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
     </PropertyGroup>
 
     <ItemGroup>
@@ -61,7 +64,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
-    
+
     <ItemGroup Condition="$(IsTestProject) == 'true'">
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
         <PackageReference Include="NUnit" Version="4.0.0"/>

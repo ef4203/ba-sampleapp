@@ -4,7 +4,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\EFK.SampleApp.Common.Persistance\EFK.SampleApp.Common.Persistance.csproj"/>
+        <ProjectReference Include="..\EFK.SampleApp.Common.Persistence\EFK.SampleApp.Common.Persistence.csproj"/>
         <ProjectReference Include="..\EFK.SampleApp.ServiceDefaults\EFK.SampleApp.ServiceDefaults.csproj"/>
     </ItemGroup>
 </Project>

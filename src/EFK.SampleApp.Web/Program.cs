@@ -11,8 +11,7 @@ builder.AddRedisOutputCache("cache");
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddHttpClient<MeasurementApiClient>(
-    client => client.BaseAddress = new Uri("http://apiservice"));
+builder.Services.AddHttpClient<MeasurementApiClient>(client => client.BaseAddress = new Uri("http://apiservice"));
 
 var app = builder.Build();
 
